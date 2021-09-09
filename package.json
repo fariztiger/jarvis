@@ -3,17 +3,17 @@
   "version": "0.3.2",
   "description": "A very intelligent webpack dashboard",
   "main": "dist/server/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "precommit": "lint-staged",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "prebuild": "rm -rf dist",
     "copy:server": "ncp src/server dist/server",
-    "copy:assets":
-      "ncp src/index.html dist/index.html && ncp src/assets dist/assets",
-    "build":
-      "webpack --env.production --config config/webpack && npm run copy:server && npm run copy:assets",
+    "copy:assets": "ncp src/index.html dist/index.html && ncp src/assets dist/assets",
+    "build": "webpack --env.production --config config/webpack && npm run copy:server && npm run copy:assets",
     "watch": "JARVIS_ENV=development webpack --watch --config config/webpack"
   },
   "engines": {
@@ -79,6 +79,9 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "lint-staged": {
-    "src/**/*.{js,json,scss}": ["prettier --write", "git add"]
+    "src/**/*.{js,json,scss}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
