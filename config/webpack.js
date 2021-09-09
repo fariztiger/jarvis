@@ -1,3 +1,15 @@
+
+
+const Jarvis = require("webpack-jarvis");
+
+/* the rest of your webpack configs */
+
+plugins: [
+  new Jarvis({
+    port: 1337 // optional: set a port
+  })
+];
+
 const { join } = require("path");
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
